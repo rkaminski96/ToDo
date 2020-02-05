@@ -32,22 +32,16 @@ namespace ToDoAzure
 
         }
 
-        private void activeTodosButton_Click(object sender, EventArgs e)
-        {
-            activeTodos1.BringToFront();
-        }
-
-        private void completedTodosButton_Click(object sender, EventArgs e)
-        {
-            completedTodos1.BringToFront();
-        }
-
         private async void addToDoButton_Click(object sender, EventArgs e)
         {
             SpeechService speechService = new SpeechService();
             var result = await speechService.RecognizeSpeechAsync();
             var todo = new Todo(result);
             TodoRepository.Todos.Add(todo);
+
+            ListViewItem item = new ListViewItem(todo.Title);
+            item.SubItems.Add(todo.Completed.ToString());
+            listView.Items.Add(item);
         }
     }
 }
