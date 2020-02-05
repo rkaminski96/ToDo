@@ -58,6 +58,7 @@
     <Compile Include="CompletedTodos.Designer.cs">
       <DependentUpon>CompletedTodos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Data\SpeechService.cs" />
     <Compile Include="Data\Todo.cs" />
     <Compile Include="Data\TodoRepository.cs" />
     <Compile Include="Design\GradientPanel.cs">
@@ -70,6 +71,12 @@
     </Compile>
     <Compile Include="ToDoForm.Designer.cs">
       <DependentUpon>ToDoForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ToDoItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ToDoItem.Designer.cs">
+      <DependentUpon>ToDoItem.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="ActiveTodos.resx">
       <DependentUpon>ActiveTodos.cs</DependentUpon>
@@ -89,6 +96,9 @@
     </Compile>
     <EmbeddedResource Include="ToDoForm.resx">
       <DependentUpon>ToDoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ToDoItem.resx">
+      <DependentUpon>ToDoItem.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

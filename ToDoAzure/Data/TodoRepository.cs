@@ -16,6 +16,15 @@ namespace ToDoAzure.Data
             {
                 new Todo("Do a task"),
                 new Todo("Do a important task"),
+                new Todo("Do a very important task"),
+                new Todo("Do a task"),
+                new Todo("Do a important task"),
+                new Todo("Do a very important task"),
+                new Todo("Do a task"),
+                new Todo("Do a important task"),
+                new Todo("Do a very important task"),
+                new Todo("Do a task"),
+                new Todo("Do a important task"),
                 new Todo("Do a very important task")
             };
         }
