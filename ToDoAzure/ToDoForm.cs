@@ -27,5 +27,15 @@ namespace ToDoAzure
         {
 
         }
+
+        private void activeTodosButton_Click(object sender, EventArgs e)
+        {
+            activeTodos1.BringToFront();
+        }
+
+        private void completedTodosButton_Click(object sender, EventArgs e)
+        {
+            completedTodos1.BringToFront();
+        }
     }
 }
