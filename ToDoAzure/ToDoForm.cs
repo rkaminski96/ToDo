@@ -19,6 +19,8 @@ namespace ToDoAzure
             InitializeComponent();
         }
 
+        public ActiveTodos ActiveTodos { get; set; }
+
         private void closeButton_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -44,6 +46,8 @@ namespace ToDoAzure
         {
             SpeechService speechService = new SpeechService();
             var result = await speechService.RecognizeSpeechAsync();
+            var todo = new Todo(result);
+            TodoRepository.Todos.Add(todo);
         }
     }
 }
