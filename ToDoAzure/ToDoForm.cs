@@ -16,5 +16,26 @@ namespace ToDoAzure
         {
             InitializeComponent();
         }
+
+        private void closeButton_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+
+        private void ToDoForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void activeTodosButton_Click(object sender, EventArgs e)
+        {
+            activeTodos1.BringToFront();
+        }
+
+        private void completedTodosButton_Click(object sender, EventArgs e)
+        {
+            completedTodos1.BringToFront();
+        }
     }
 }
