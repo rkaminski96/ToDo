@@ -31,9 +31,11 @@
             this.closeButton = new System.Windows.Forms.PictureBox();
             this.gradientPanel1 = new ToDoAzure.Design.GradientPanel();
             this.gradientPanel2 = new ToDoAzure.Design.GradientPanel();
+            this.completedTodosButton = new System.Windows.Forms.Button();
+            this.activeTodosButton = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.addToDoButton = new System.Windows.Forms.PictureBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
@@ -45,14 +47,12 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.activeTodos1 = new ToDoAzure.ActiveTodos();
-            this.activeTodosButton = new System.Windows.Forms.Button();
-            this.completedTodosButton = new System.Windows.Forms.Button();
             this.completedTodos1 = new ToDoAzure.CompletedTodos();
             ((System.ComponentModel.ISupportInitialize)(this.closeButton)).BeginInit();
             this.gradientPanel1.SuspendLayout();
             this.gradientPanel2.SuspendLayout();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.addToDoButton)).BeginInit();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -101,11 +101,37 @@
             this.gradientPanel2.Size = new System.Drawing.Size(167, 570);
             this.gradientPanel2.TabIndex = 4;
             // 
+            // completedTodosButton
+            // 
+            this.completedTodosButton.BackColor = System.Drawing.Color.Transparent;
+            this.completedTodosButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.completedTodosButton.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.completedTodosButton.Location = new System.Drawing.Point(0, 251);
+            this.completedTodosButton.Name = "completedTodosButton";
+            this.completedTodosButton.Size = new System.Drawing.Size(167, 51);
+            this.completedTodosButton.TabIndex = 6;
+            this.completedTodosButton.Text = "COMPLETED";
+            this.completedTodosButton.UseVisualStyleBackColor = false;
+            this.completedTodosButton.Click += new System.EventHandler(this.completedTodosButton_Click);
+            // 
+            // activeTodosButton
+            // 
+            this.activeTodosButton.BackColor = System.Drawing.Color.Transparent;
+            this.activeTodosButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.activeTodosButton.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.activeTodosButton.Location = new System.Drawing.Point(0, 202);
+            this.activeTodosButton.Name = "activeTodosButton";
+            this.activeTodosButton.Size = new System.Drawing.Size(167, 51);
+            this.activeTodosButton.TabIndex = 5;
+            this.activeTodosButton.Text = "ACTIVE";
+            this.activeTodosButton.UseVisualStyleBackColor = false;
+            this.activeTodosButton.Click += new System.EventHandler(this.activeTodosButton_Click);
+            // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.Transparent;
             this.panel3.Controls.Add(this.label3);
-            this.panel3.Controls.Add(this.pictureBox5);
+            this.panel3.Controls.Add(this.addToDoButton);
             this.panel3.Location = new System.Drawing.Point(0, 450);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(167, 120);
@@ -121,15 +147,16 @@
             this.label3.TabIndex = 4;
             this.label3.Text = "Add Todo";
             // 
-            // pictureBox5
+            // addToDoButton
             // 
-            this.pictureBox5.Image = global::ToDoAzure.Properties.Resources.microphone;
-            this.pictureBox5.Location = new System.Drawing.Point(64, 69);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(45, 39);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox5.TabIndex = 3;
-            this.pictureBox5.TabStop = false;
+            this.addToDoButton.Image = global::ToDoAzure.Properties.Resources.microphone;
+            this.addToDoButton.Location = new System.Drawing.Point(64, 69);
+            this.addToDoButton.Name = "addToDoButton";
+            this.addToDoButton.Size = new System.Drawing.Size(45, 39);
+            this.addToDoButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.addToDoButton.TabIndex = 3;
+            this.addToDoButton.TabStop = false;
+            this.addToDoButton.Click += new System.EventHandler(this.addToDoButton_Click);
             // 
             // panel4
             // 
@@ -236,32 +263,6 @@
             this.activeTodos1.Size = new System.Drawing.Size(650, 420);
             this.activeTodos1.TabIndex = 3;
             // 
-            // activeTodosButton
-            // 
-            this.activeTodosButton.BackColor = System.Drawing.Color.Transparent;
-            this.activeTodosButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.activeTodosButton.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.activeTodosButton.Location = new System.Drawing.Point(0, 202);
-            this.activeTodosButton.Name = "activeTodosButton";
-            this.activeTodosButton.Size = new System.Drawing.Size(167, 51);
-            this.activeTodosButton.TabIndex = 5;
-            this.activeTodosButton.Text = "ACTIVE";
-            this.activeTodosButton.UseVisualStyleBackColor = false;
-            this.activeTodosButton.Click += new System.EventHandler(this.activeTodosButton_Click);
-            // 
-            // completedTodosButton
-            // 
-            this.completedTodosButton.BackColor = System.Drawing.Color.Transparent;
-            this.completedTodosButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.completedTodosButton.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.completedTodosButton.Location = new System.Drawing.Point(0, 251);
-            this.completedTodosButton.Name = "completedTodosButton";
-            this.completedTodosButton.Size = new System.Drawing.Size(167, 51);
-            this.completedTodosButton.TabIndex = 6;
-            this.completedTodosButton.Text = "COMPLETED";
-            this.completedTodosButton.UseVisualStyleBackColor = false;
-            this.completedTodosButton.Click += new System.EventHandler(this.completedTodosButton_Click);
-            // 
             // completedTodos1
             // 
             this.completedTodos1.Location = new System.Drawing.Point(173, 150);
@@ -289,7 +290,7 @@
             this.gradientPanel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.addToDoButton)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
@@ -318,7 +319,7 @@
         private Design.GradientPanel gradientPanel2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.PictureBox addToDoButton;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.PictureBox pictureBox6;

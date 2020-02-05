@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ToDoAzure.Data;
+using ToDoSpeech;
 
 namespace ToDoAzure
 {
@@ -36,6 +38,13 @@ namespace ToDoAzure
         private void completedTodosButton_Click(object sender, EventArgs e)
         {
             completedTodos1.BringToFront();
+        }
+
+        private async void addToDoButton_Click(object sender, EventArgs e)
+        {
+            SpeechService speechService = new SpeechService();
+            var result = await speechService.RecognizeSpeechAsync();
+            label4.Text = result;
         }
     }
 }
