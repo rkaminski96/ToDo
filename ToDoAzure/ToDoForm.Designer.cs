@@ -46,8 +46,8 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.activeTodos1 = new ToDoAzure.ActiveTodos();
             this.completedTodos1 = new ToDoAzure.CompletedTodos();
+            this.activeTodos1 = new ToDoAzure.ActiveTodos();
             ((System.ComponentModel.ISupportInitialize)(this.closeButton)).BeginInit();
             this.gradientPanel1.SuspendLayout();
             this.gradientPanel2.SuspendLayout();
@@ -256,27 +256,27 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // activeTodos1
-            // 
-            this.activeTodos1.Location = new System.Drawing.Point(173, 150);
-            this.activeTodos1.Name = "activeTodos1";
-            this.activeTodos1.Size = new System.Drawing.Size(650, 420);
-            this.activeTodos1.TabIndex = 3;
-            // 
             // completedTodos1
             // 
-            this.completedTodos1.Location = new System.Drawing.Point(173, 150);
+            this.completedTodos1.Location = new System.Drawing.Point(173, 138);
             this.completedTodos1.Name = "completedTodos1";
-            this.completedTodos1.Size = new System.Drawing.Size(650, 420);
-            this.completedTodos1.TabIndex = 4;
+            this.completedTodos1.Size = new System.Drawing.Size(675, 420);
+            this.completedTodos1.TabIndex = 2;
+            // 
+            // activeTodos1
+            // 
+            this.activeTodos1.Location = new System.Drawing.Point(173, 138);
+            this.activeTodos1.Name = "activeTodos1";
+            this.activeTodos1.Size = new System.Drawing.Size(675, 420);
+            this.activeTodos1.TabIndex = 3;
             // 
             // ToDoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(860, 570);
-            this.Controls.Add(this.completedTodos1);
             this.Controls.Add(this.activeTodos1);
+            this.Controls.Add(this.completedTodos1);
             this.Controls.Add(this.closeButton);
             this.Controls.Add(this.gradientPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -315,7 +315,6 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox closeButton;
-        private ActiveTodos activeTodos1;
         private Design.GradientPanel gradientPanel2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label3;
@@ -327,5 +326,6 @@
         private System.Windows.Forms.Button activeTodosButton;
         private System.Windows.Forms.Button completedTodosButton;
         private CompletedTodos completedTodos1;
+        private ActiveTodos activeTodos1;
     }
 }

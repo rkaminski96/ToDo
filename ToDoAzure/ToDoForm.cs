@@ -44,7 +44,6 @@ namespace ToDoAzure
         {
             SpeechService speechService = new SpeechService();
             var result = await speechService.RecognizeSpeechAsync();
-            label4.Text = result;
         }
     }
 }
