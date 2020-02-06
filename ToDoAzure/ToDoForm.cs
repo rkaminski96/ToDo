@@ -14,6 +14,8 @@ namespace ToDoAzure
 {
     public partial class ToDoForm : Form
     {
+        private List<Todo> todos = new List<Todo>();
+
         public ToDoForm()
         {
             InitializeComponent();
@@ -28,12 +30,13 @@ namespace ToDoAzure
         {
             SpeechService speechService = new SpeechService();
             var result = await speechService.RecognizeSpeechAsync();
+
             var todo = new Todo(result);
-            TodoRepository.Todos.Add(todo);
+            todos.Add(todo);
 
             ListViewItem item = new ListViewItem(todo.Title);
             item.SubItems.Add(todo.Completed.ToString());
-            listView.Items.Add(item);
+            listViewAll.Items.Add(item);
         }
     }
 }

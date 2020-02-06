@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.closeButton = new System.Windows.Forms.PictureBox();
-            this.listView = new System.Windows.Forms.ListView();
+            this.listViewCompleted = new System.Windows.Forms.ListView();
             this.ToDoTitle = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.ToDoStatus = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.gradientPanel1 = new ToDoAzure.Design.GradientPanel();
@@ -51,6 +51,12 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.listViewActive = new System.Windows.Forms.ListView();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.listViewAll = new System.Windows.Forms.ListView();
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             ((System.ComponentModel.ISupportInitialize)(this.closeButton)).BeginInit();
             this.gradientPanel1.SuspendLayout();
             this.gradientPanel2.SuspendLayout();
@@ -76,18 +82,18 @@
             this.closeButton.TabStop = false;
             this.closeButton.Click += new System.EventHandler(this.closeButton_Click);
             // 
-            // listView
+            // listViewCompleted
             // 
-            this.listView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.listViewCompleted.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.ToDoTitle,
             this.ToDoStatus});
-            this.listView.HideSelection = false;
-            this.listView.Location = new System.Drawing.Point(186, 110);
-            this.listView.Name = "listView";
-            this.listView.Size = new System.Drawing.Size(506, 362);
-            this.listView.TabIndex = 2;
-            this.listView.UseCompatibleStateImageBehavior = false;
-            this.listView.View = System.Windows.Forms.View.Details;
+            this.listViewCompleted.HideSelection = false;
+            this.listViewCompleted.Location = new System.Drawing.Point(186, 110);
+            this.listViewCompleted.Name = "listViewCompleted";
+            this.listViewCompleted.Size = new System.Drawing.Size(506, 362);
+            this.listViewCompleted.TabIndex = 2;
+            this.listViewCompleted.UseCompatibleStateImageBehavior = false;
+            this.listViewCompleted.View = System.Windows.Forms.View.Details;
             // 
             // ToDoTitle
             // 
@@ -298,12 +304,60 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
+            // listViewActive
+            // 
+            this.listViewActive.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1,
+            this.columnHeader2});
+            this.listViewActive.HideSelection = false;
+            this.listViewActive.Location = new System.Drawing.Point(186, 110);
+            this.listViewActive.Name = "listViewActive";
+            this.listViewActive.Size = new System.Drawing.Size(506, 362);
+            this.listViewActive.TabIndex = 3;
+            this.listViewActive.UseCompatibleStateImageBehavior = false;
+            this.listViewActive.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "Todo Title";
+            this.columnHeader1.Width = 381;
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "Todo Status";
+            this.columnHeader2.Width = 120;
+            // 
+            // listViewAll
+            // 
+            this.listViewAll.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader3,
+            this.columnHeader4});
+            this.listViewAll.HideSelection = false;
+            this.listViewAll.Location = new System.Drawing.Point(186, 110);
+            this.listViewAll.Name = "listViewAll";
+            this.listViewAll.Size = new System.Drawing.Size(506, 362);
+            this.listViewAll.TabIndex = 4;
+            this.listViewAll.UseCompatibleStateImageBehavior = false;
+            this.listViewAll.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "Todo Title";
+            this.columnHeader3.Width = 381;
+            // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "Todo Status";
+            this.columnHeader4.Width = 120;
+            // 
             // ToDoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(720, 487);
-            this.Controls.Add(this.listView);
+            this.Controls.Add(this.listViewAll);
+            this.Controls.Add(this.listViewActive);
+            this.Controls.Add(this.listViewCompleted);
             this.Controls.Add(this.closeButton);
             this.Controls.Add(this.gradientPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -351,10 +405,16 @@
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Button activeTodosButton;
         private System.Windows.Forms.Button completedTodosButton;
-        private System.Windows.Forms.ListView listView;
+        private System.Windows.Forms.ListView listViewCompleted;
         private System.Windows.Forms.ColumnHeader ToDoStatus;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         internal System.Windows.Forms.ColumnHeader ToDoTitle;
+        private System.Windows.Forms.ListView listViewActive;
+        internal System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.ColumnHeader columnHeader2;
+        private System.Windows.Forms.ListView listViewAll;
+        internal System.Windows.Forms.ColumnHeader columnHeader3;
+        private System.Windows.Forms.ColumnHeader columnHeader4;
     }
 }
