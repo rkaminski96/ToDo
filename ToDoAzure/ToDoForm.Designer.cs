@@ -37,9 +37,11 @@
             this.completedTodosButton = new System.Windows.Forms.Button();
             this.activeTodosButton = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.label6 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.addToDoButton = new System.Windows.Forms.PictureBox();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
@@ -49,8 +51,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.closeButton)).BeginInit();
             this.gradientPanel1.SuspendLayout();
             this.gradientPanel2.SuspendLayout();
@@ -162,6 +162,16 @@
             this.panel3.Size = new System.Drawing.Size(167, 120);
             this.panel3.TabIndex = 2;
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label6.Location = new System.Drawing.Point(42, 36);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(88, 21);
+            this.label6.TabIndex = 5;
+            this.label6.Text = "Add Todo";
+            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -192,6 +202,16 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(165, 152);
             this.panel4.TabIndex = 0;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label5.Location = new System.Drawing.Point(42, 111);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(88, 21);
+            this.label5.TabIndex = 2;
+            this.label5.Text = "Todo App";
             // 
             // label4
             // 
@@ -278,26 +298,6 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label5.Location = new System.Drawing.Point(42, 111);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(88, 21);
-            this.label5.TabIndex = 2;
-            this.label5.Text = "Todo App";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label6.Location = new System.Drawing.Point(42, 36);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(88, 21);
-            this.label6.TabIndex = 5;
-            this.label6.Text = "Add Todo";
-            // 
             // ToDoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -311,7 +311,6 @@
             this.Name = "ToDoForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ToDoForm";
-            this.Load += new System.EventHandler(this.ToDoForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.closeButton)).EndInit();
             this.gradientPanel1.ResumeLayout(false);
             this.gradientPanel2.ResumeLayout(false);
@@ -353,9 +352,9 @@
         private System.Windows.Forms.Button activeTodosButton;
         private System.Windows.Forms.Button completedTodosButton;
         private System.Windows.Forms.ListView listView;
-        private System.Windows.Forms.ColumnHeader ToDoTitle;
         private System.Windows.Forms.ColumnHeader ToDoStatus;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
+        internal System.Windows.Forms.ColumnHeader ToDoTitle;
     }
 }
