@@ -38,12 +38,24 @@ namespace ToDoAzure
             return result;
         }
 
+        private string checkSelectedLanguage()
+        {
+            if (chooseLanguageComboBox.SelectedIndex == 0)
+                return "en-GB";
+            return "pl-PL";
+        }
+
         private void addItemsToListView(ListView listView, Todo todo)
         { 
             ListViewItem item = new ListViewItem(todo.Title);
             var toDoStatus = checkToDoStatus(todo);
             item.SubItems.Add(toDoStatus);
             listView.Items.Add(item);
+        }
+
+        private void ToDoForm_Load(object sender, EventArgs e)
+        {
+            chooseLanguageComboBox.SelectedIndex = 0;
         }
 
         private void closeButton_Click(object sender, EventArgs e)
@@ -53,8 +65,9 @@ namespace ToDoAzure
 
         private async void addToDoButton_Click(object sender, EventArgs e)
         {
+            var selectedLanguage = checkSelectedLanguage();
             SpeechService speechService = new SpeechService();
-            var result = await speechService.RecognizeSpeechAsync();
+            var result = await speechService.RecognizeSpeechAsync(selectedLanguage);
             result = trimResult(result);
 
             var newTodo = todos.FirstOrDefault(s => s.Title == result);
@@ -79,8 +92,9 @@ namespace ToDoAzure
 
         private async void markAsDoneButton_Click(object sender, EventArgs e)
         {
+            var selectedLanguage = checkSelectedLanguage();
             SpeechService speechService = new SpeechService();
-            var result = await speechService.RecognizeSpeechAsync();
+            var result = await speechService.RecognizeSpeechAsync(selectedLanguage);
             result = trimResult(result);
 
             var completedTodo = todos.FirstOrDefault(s => s.Title == result);
@@ -177,6 +191,5 @@ namespace ToDoAzure
                 }
             }
         }
-
     }
 }

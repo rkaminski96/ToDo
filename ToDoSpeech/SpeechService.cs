@@ -9,11 +9,11 @@ namespace ToDoSpeech
 {
     public class SpeechService
     {
-        public async Task<string> RecognizeSpeechAsync()
+        public async Task<string> RecognizeSpeechAsync(string selectedLanguage)
         {
             var config = SpeechConfig.FromSubscription("5bf83dc627494dd28fdaddf2d6d60ff2", "westeurope");
 
-            using (var recognizer = new SpeechRecognizer(config))
+            using (var recognizer = new SpeechRecognizer(config, selectedLanguage))
             {
                 var result = await recognizer.RecognizeOnceAsync();
 

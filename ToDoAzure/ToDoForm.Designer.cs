@@ -31,18 +31,6 @@
             this.listViewCompleted = new System.Windows.Forms.ListView();
             this.ToDoTitle = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.ToDoStatus = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.gradientPanel1 = new ToDoAzure.Design.GradientPanel();
-            this.gradientPanel2 = new ToDoAzure.Design.GradientPanel();
-            this.allTodosButton = new System.Windows.Forms.Button();
-            this.completedTodosButton = new System.Windows.Forms.Button();
-            this.activeTodosButton = new System.Windows.Forms.Button();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
             this.listViewActive = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -52,24 +40,38 @@
             this.markAsDoneButton = new System.Windows.Forms.PictureBox();
             this.addToDoButton = new System.Windows.Forms.PictureBox();
             this.closeButton = new System.Windows.Forms.PictureBox();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.toDoStatusLabel = new System.Windows.Forms.Label();
-            this.gradientPanel1.SuspendLayout();
-            this.gradientPanel2.SuspendLayout();
-            this.panel4.SuspendLayout();
-            this.panel2.SuspendLayout();
-            this.panel1.SuspendLayout();
+            this.chooseLanguageLabel = new System.Windows.Forms.Label();
+            this.chooseLanguageComboBox = new System.Windows.Forms.ComboBox();
+            this.gradientPanel1 = new ToDoAzure.Design.GradientPanel();
+            this.gradientPanel2 = new ToDoAzure.Design.GradientPanel();
+            this.allTodosButton = new System.Windows.Forms.Button();
+            this.completedTodosButton = new System.Windows.Forms.Button();
+            this.activeTodosButton = new System.Windows.Forms.Button();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.markAsDoneButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.addToDoButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.closeButton)).BeginInit();
+            this.gradientPanel1.SuspendLayout();
+            this.gradientPanel2.SuspendLayout();
+            this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -95,6 +97,139 @@
             // 
             this.ToDoStatus.Text = "Todo Status";
             this.ToDoStatus.Width = 136;
+            // 
+            // listViewActive
+            // 
+            this.listViewActive.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1,
+            this.columnHeader2});
+            this.listViewActive.HideSelection = false;
+            this.listViewActive.Location = new System.Drawing.Point(182, 48);
+            this.listViewActive.Name = "listViewActive";
+            this.listViewActive.Size = new System.Drawing.Size(521, 362);
+            this.listViewActive.TabIndex = 3;
+            this.listViewActive.UseCompatibleStateImageBehavior = false;
+            this.listViewActive.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "Todo Title";
+            this.columnHeader1.Width = 381;
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "Todo Status";
+            this.columnHeader2.Width = 134;
+            // 
+            // listViewAll
+            // 
+            this.listViewAll.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader3,
+            this.columnHeader4});
+            this.listViewAll.HideSelection = false;
+            this.listViewAll.Location = new System.Drawing.Point(182, 48);
+            this.listViewAll.Name = "listViewAll";
+            this.listViewAll.Size = new System.Drawing.Size(521, 362);
+            this.listViewAll.TabIndex = 4;
+            this.listViewAll.UseCompatibleStateImageBehavior = false;
+            this.listViewAll.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "Todo Title";
+            this.columnHeader3.Width = 381;
+            // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "Todo Status";
+            this.columnHeader4.Width = 135;
+            // 
+            // markAsDoneButton
+            // 
+            this.markAsDoneButton.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.markAsDoneButton.Image = global::ToDoAzure.Properties.Resources.tick;
+            this.markAsDoneButton.Location = new System.Drawing.Point(563, 450);
+            this.markAsDoneButton.Name = "markAsDoneButton";
+            this.markAsDoneButton.Size = new System.Drawing.Size(60, 60);
+            this.markAsDoneButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.markAsDoneButton.TabIndex = 6;
+            this.markAsDoneButton.TabStop = false;
+            this.markAsDoneButton.Click += new System.EventHandler(this.markAsDoneButton_Click);
+            // 
+            // addToDoButton
+            // 
+            this.addToDoButton.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.addToDoButton.Image = global::ToDoAzure.Properties.Resources.radio;
+            this.addToDoButton.Location = new System.Drawing.Point(643, 450);
+            this.addToDoButton.Name = "addToDoButton";
+            this.addToDoButton.Size = new System.Drawing.Size(60, 60);
+            this.addToDoButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.addToDoButton.TabIndex = 5;
+            this.addToDoButton.TabStop = false;
+            this.addToDoButton.Click += new System.EventHandler(this.addToDoButton_Click);
+            // 
+            // closeButton
+            // 
+            this.closeButton.Image = global::ToDoAzure.Properties.Resources.close;
+            this.closeButton.Location = new System.Drawing.Point(689, 0);
+            this.closeButton.Name = "closeButton";
+            this.closeButton.Size = new System.Drawing.Size(30, 30);
+            this.closeButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.closeButton.TabIndex = 1;
+            this.closeButton.TabStop = false;
+            this.closeButton.Click += new System.EventHandler(this.closeButton_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label3.Location = new System.Drawing.Point(560, 430);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(74, 17);
+            this.label3.TabIndex = 7;
+            this.label3.Text = "Complete";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label6.Location = new System.Drawing.Point(654, 430);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(35, 17);
+            this.label6.TabIndex = 8;
+            this.label6.Text = "Add";
+            // 
+            // toDoStatusLabel
+            // 
+            this.toDoStatusLabel.AutoSize = true;
+            this.toDoStatusLabel.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.toDoStatusLabel.Location = new System.Drawing.Point(178, 21);
+            this.toDoStatusLabel.Name = "toDoStatusLabel";
+            this.toDoStatusLabel.Size = new System.Drawing.Size(130, 21);
+            this.toDoStatusLabel.TabIndex = 9;
+            this.toDoStatusLabel.Text = "Todo App | All ";
+            // 
+            // chooseLanguageLabel
+            // 
+            this.chooseLanguageLabel.AutoSize = true;
+            this.chooseLanguageLabel.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.chooseLanguageLabel.Location = new System.Drawing.Point(179, 432);
+            this.chooseLanguageLabel.Name = "chooseLanguageLabel";
+            this.chooseLanguageLabel.Size = new System.Drawing.Size(129, 17);
+            this.chooseLanguageLabel.TabIndex = 10;
+            this.chooseLanguageLabel.Text = "Choose language:";
+            // 
+            // chooseLanguageComboBox
+            // 
+            this.chooseLanguageComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.chooseLanguageComboBox.FormattingEnabled = true;
+            this.chooseLanguageComboBox.Items.AddRange(new object[] {
+            "EN",
+            "PL"});
+            this.chooseLanguageComboBox.Location = new System.Drawing.Point(182, 452);
+            this.chooseLanguageComboBox.Name = "chooseLanguageComboBox";
+            this.chooseLanguageComboBox.Size = new System.Drawing.Size(121, 21);
+            this.chooseLanguageComboBox.TabIndex = 11;
             // 
             // gradientPanel1
             // 
@@ -197,6 +332,24 @@
             this.label4.Size = new System.Drawing.Size(0, 22);
             this.label4.TabIndex = 1;
             // 
+            // pictureBox6
+            // 
+            this.pictureBox6.Image = global::ToDoAzure.Properties.Resources.todo;
+            this.pictureBox6.Location = new System.Drawing.Point(36, 21);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(94, 74);
+            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox6.TabIndex = 0;
+            this.pictureBox6.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Location = new System.Drawing.Point(0, 202);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(167, 62);
+            this.pictureBox3.TabIndex = 3;
+            this.pictureBox3.TabStop = false;
+            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Transparent;
@@ -215,6 +368,16 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(0, 20);
             this.label2.TabIndex = 4;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::ToDoAzure.Properties.Resources.microphone;
+            this.pictureBox2.Location = new System.Drawing.Point(64, 69);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(45, 39);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 3;
+            this.pictureBox2.TabStop = false;
             // 
             // panel1
             // 
@@ -235,115 +398,6 @@
             this.label1.Size = new System.Drawing.Size(0, 22);
             this.label1.TabIndex = 1;
             // 
-            // listViewActive
-            // 
-            this.listViewActive.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader1,
-            this.columnHeader2});
-            this.listViewActive.HideSelection = false;
-            this.listViewActive.Location = new System.Drawing.Point(182, 48);
-            this.listViewActive.Name = "listViewActive";
-            this.listViewActive.Size = new System.Drawing.Size(521, 362);
-            this.listViewActive.TabIndex = 3;
-            this.listViewActive.UseCompatibleStateImageBehavior = false;
-            this.listViewActive.View = System.Windows.Forms.View.Details;
-            // 
-            // columnHeader1
-            // 
-            this.columnHeader1.Text = "Todo Title";
-            this.columnHeader1.Width = 381;
-            // 
-            // columnHeader2
-            // 
-            this.columnHeader2.Text = "Todo Status";
-            this.columnHeader2.Width = 134;
-            // 
-            // listViewAll
-            // 
-            this.listViewAll.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader3,
-            this.columnHeader4});
-            this.listViewAll.HideSelection = false;
-            this.listViewAll.Location = new System.Drawing.Point(182, 48);
-            this.listViewAll.Name = "listViewAll";
-            this.listViewAll.Size = new System.Drawing.Size(521, 362);
-            this.listViewAll.TabIndex = 4;
-            this.listViewAll.UseCompatibleStateImageBehavior = false;
-            this.listViewAll.View = System.Windows.Forms.View.Details;
-            // 
-            // columnHeader3
-            // 
-            this.columnHeader3.Text = "Todo Title";
-            this.columnHeader3.Width = 381;
-            // 
-            // columnHeader4
-            // 
-            this.columnHeader4.Text = "Todo Status";
-            this.columnHeader4.Width = 135;
-            // 
-            // markAsDoneButton
-            // 
-            this.markAsDoneButton.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.markAsDoneButton.Image = global::ToDoAzure.Properties.Resources.tick;
-            this.markAsDoneButton.Location = new System.Drawing.Point(182, 450);
-            this.markAsDoneButton.Name = "markAsDoneButton";
-            this.markAsDoneButton.Size = new System.Drawing.Size(60, 60);
-            this.markAsDoneButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.markAsDoneButton.TabIndex = 6;
-            this.markAsDoneButton.TabStop = false;
-            this.markAsDoneButton.Click += new System.EventHandler(this.markAsDoneButton_Click);
-            // 
-            // addToDoButton
-            // 
-            this.addToDoButton.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.addToDoButton.Image = global::ToDoAzure.Properties.Resources.radio;
-            this.addToDoButton.Location = new System.Drawing.Point(643, 450);
-            this.addToDoButton.Name = "addToDoButton";
-            this.addToDoButton.Size = new System.Drawing.Size(60, 60);
-            this.addToDoButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.addToDoButton.TabIndex = 5;
-            this.addToDoButton.TabStop = false;
-            this.addToDoButton.Click += new System.EventHandler(this.addToDoButton_Click);
-            // 
-            // closeButton
-            // 
-            this.closeButton.Image = global::ToDoAzure.Properties.Resources.close;
-            this.closeButton.Location = new System.Drawing.Point(689, 0);
-            this.closeButton.Name = "closeButton";
-            this.closeButton.Size = new System.Drawing.Size(30, 30);
-            this.closeButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.closeButton.TabIndex = 1;
-            this.closeButton.TabStop = false;
-            this.closeButton.Click += new System.EventHandler(this.closeButton_Click);
-            // 
-            // pictureBox6
-            // 
-            this.pictureBox6.Image = global::ToDoAzure.Properties.Resources.todo;
-            this.pictureBox6.Location = new System.Drawing.Point(36, 21);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(94, 74);
-            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox6.TabIndex = 0;
-            this.pictureBox6.TabStop = false;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Location = new System.Drawing.Point(0, 202);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(167, 62);
-            this.pictureBox3.TabIndex = 3;
-            this.pictureBox3.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::ToDoAzure.Properties.Resources.microphone;
-            this.pictureBox2.Location = new System.Drawing.Point(64, 69);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(45, 39);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 3;
-            this.pictureBox2.TabStop = false;
-            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::ToDoAzure.Properties.Resources.todo;
@@ -354,41 +408,13 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label3.Location = new System.Drawing.Point(179, 430);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(95, 17);
-            this.label3.TabIndex = 7;
-            this.label3.Text = "Mark as done";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label6.Location = new System.Drawing.Point(640, 430);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(71, 17);
-            this.label6.TabIndex = 8;
-            this.label6.Text = "Add Todo";
-            // 
-            // toDoStatusLabel
-            // 
-            this.toDoStatusLabel.AutoSize = true;
-            this.toDoStatusLabel.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.toDoStatusLabel.Location = new System.Drawing.Point(178, 21);
-            this.toDoStatusLabel.Name = "toDoStatusLabel";
-            this.toDoStatusLabel.Size = new System.Drawing.Size(130, 21);
-            this.toDoStatusLabel.TabIndex = 9;
-            this.toDoStatusLabel.Text = "Todo App | All ";
-            // 
             // ToDoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(720, 527);
+            this.Controls.Add(this.chooseLanguageComboBox);
+            this.Controls.Add(this.chooseLanguageLabel);
             this.Controls.Add(this.toDoStatusLabel);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label3);
@@ -404,20 +430,21 @@
             this.Name = "ToDoForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ToDoForm";
+            this.Load += new System.EventHandler(this.ToDoForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.markAsDoneButton)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.addToDoButton)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.closeButton)).EndInit();
             this.gradientPanel1.ResumeLayout(false);
             this.gradientPanel2.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.markAsDoneButton)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.addToDoButton)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.closeButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -457,5 +484,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label toDoStatusLabel;
+        private System.Windows.Forms.Label chooseLanguageLabel;
+        private System.Windows.Forms.ComboBox chooseLanguageComboBox;
     }
 }
