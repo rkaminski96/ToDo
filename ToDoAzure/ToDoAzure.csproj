@@ -54,6 +54,28 @@
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -68,18 +90,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ActiveTodos.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="ActiveTodos.Designer.cs">
-      <DependentUpon>ActiveTodos.cs</DependentUpon>
-    </Compile>
-    <Compile Include="CompletedTodos.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="CompletedTodos.Designer.cs">
-      <DependentUpon>CompletedTodos.cs</DependentUpon>
-    </Compile>
     <Compile Include="Data\Todo.cs" />
     <Compile Include="Data\TodoRepository.cs" />
     <Compile Include="Design\GradientPanel.cs">
@@ -93,18 +103,6 @@
     <Compile Include="ToDoForm.Designer.cs">
       <DependentUpon>ToDoForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="ToDoItem.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="ToDoItem.Designer.cs">
-      <DependentUpon>ToDoItem.cs</DependentUpon>
-    </Compile>
-    <EmbeddedResource Include="ActiveTodos.resx">
-      <DependentUpon>ActiveTodos.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="CompletedTodos.resx">
-      <DependentUpon>CompletedTodos.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -117,9 +115,6 @@
     </Compile>
     <EmbeddedResource Include="ToDoForm.resx">
       <DependentUpon>ToDoForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ToDoItem.resx">
-      <DependentUpon>ToDoItem.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

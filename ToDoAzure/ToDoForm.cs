@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ToDoAzure.Data;
+using ToDoSpeech;
 
 namespace ToDoAzure
 {
@@ -22,20 +24,16 @@ namespace ToDoAzure
             Application.Exit();
         }
 
-
-        private void ToDoForm_Load(object sender, EventArgs e)
+        private async void addToDoButton_Click(object sender, EventArgs e)
         {
+            SpeechService speechService = new SpeechService();
+            var result = await speechService.RecognizeSpeechAsync();
+            var todo = new Todo(result);
+            TodoRepository.Todos.Add(todo);
 
-        }
-
-        private void activeTodosButton_Click(object sender, EventArgs e)
-        {
-            activeTodos1.BringToFront();
-        }
-
-        private void completedTodosButton_Click(object sender, EventArgs e)
-        {
-            completedTodos1.BringToFront();
+            ListViewItem item = new ListViewItem(todo.Title);
+            item.SubItems.Add(todo.Completed.ToString());
+            listView.Items.Add(item);
         }
     }
 }

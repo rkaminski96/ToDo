@@ -9,11 +9,11 @@ namespace ToDoSpeech
 {
     public class SpeechService
     {
-        public static async Task<string> RecognizeSpeechAsync()
+        public async Task<string> RecognizeSpeechAsync()
         {
-            var config = SpeechConfig.FromSubscription("844213cc6234423295a082b7745243e0", "westeurope");
+            var config = SpeechConfig.FromSubscription("5bf83dc627494dd28fdaddf2d6d60ff2", "westeurope");
 
-            using (var recognizer = new SpeechRecognizer(config, "pl-PL"))
+            using (var recognizer = new SpeechRecognizer(config))
             {
                 var result = await recognizer.RecognizeOnceAsync();
 
@@ -27,6 +27,7 @@ namespace ToDoSpeech
                 {
                     throw new Exception($"NOMATCH: Speech could not be recognized.");
                 }
+
                 return result.Text;
             }
         }
