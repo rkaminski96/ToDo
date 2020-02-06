@@ -21,6 +21,16 @@ namespace ToDoAzure
             InitializeComponent();
         }
 
+        private string CheckToDoStatus(Todo todo)
+        {
+            var toDoStatus = "";
+            if (todo.Completed == false)
+                toDoStatus = "ACTIVE";
+            else
+                toDoStatus = "COMPLETED";
+            return toDoStatus;
+        }
+
         private void closeButton_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -36,7 +46,8 @@ namespace ToDoAzure
 
             ListViewItem item = new ListViewItem(todo.Title);
 
-            item.SubItems.Add(todo.Completed.ToString());
+            var toDoStatus = CheckToDoStatus(todo);
+            item.SubItems.Add(toDoStatus);
             listViewAll.Items.Add(item);
         }
 
@@ -47,17 +58,30 @@ namespace ToDoAzure
 
         private void allTodosButton_Click(object sender, EventArgs e)
         {
-
+            listViewAll.BringToFront();
+            toDoStatusLabel.Text = "Todo App | All";
         }
 
         private void activeTodosButton_Click(object sender, EventArgs e)
         {
+            listViewActive.Items.Clear();
 
+            foreach (var todo in todos)
+            {
+                ListViewItem item = new ListViewItem(todo.Title);
+                var toDoStatus = CheckToDoStatus(todo);
+                item.SubItems.Add(toDoStatus);
+                listViewActive.Items.Add(item);
+            }
+
+            listViewActive.BringToFront();
+            toDoStatusLabel.Text = "Todo App | Active";
         }
 
         private void completedTodosButton_Click(object sender, EventArgs e)
         {
-
+            listViewCompleted.BringToFront();
+            toDoStatusLabel.Text = "Todo App | Completed";
         }
     }
 }
