@@ -35,9 +35,29 @@ namespace ToDoAzure
             todos.Add(todo);
 
             ListViewItem item = new ListViewItem(todo.Title);
-            
+
             item.SubItems.Add(todo.Completed.ToString());
             listViewAll.Items.Add(item);
+        }
+
+        private void markAsDoneButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void allTodosButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void activeTodosButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void completedTodosButton_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
