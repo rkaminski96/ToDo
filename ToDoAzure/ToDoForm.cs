@@ -35,6 +35,7 @@ namespace ToDoAzure
             todos.Add(todo);
 
             ListViewItem item = new ListViewItem(todo.Title);
+            
             item.SubItems.Add(todo.Completed.ToString());
             listViewAll.Items.Add(item);
         }

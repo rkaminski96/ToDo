@@ -57,6 +57,7 @@
             this.listViewAll = new System.Windows.Forms.ListView();
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.allTodosButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.closeButton)).BeginInit();
             this.gradientPanel1.SuspendLayout();
             this.gradientPanel2.SuspendLayout();
@@ -123,6 +124,7 @@
             // 
             this.gradientPanel2.ColorBottom = System.Drawing.Color.DarkOrchid;
             this.gradientPanel2.ColorTop = System.Drawing.Color.SteelBlue;
+            this.gradientPanel2.Controls.Add(this.allTodosButton);
             this.gradientPanel2.Controls.Add(this.completedTodosButton);
             this.gradientPanel2.Controls.Add(this.activeTodosButton);
             this.gradientPanel2.Controls.Add(this.panel3);
@@ -138,7 +140,7 @@
             this.completedTodosButton.BackColor = System.Drawing.Color.Transparent;
             this.completedTodosButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.completedTodosButton.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.completedTodosButton.Location = new System.Drawing.Point(0, 213);
+            this.completedTodosButton.Location = new System.Drawing.Point(0, 280);
             this.completedTodosButton.Name = "completedTodosButton";
             this.completedTodosButton.Size = new System.Drawing.Size(167, 51);
             this.completedTodosButton.TabIndex = 6;
@@ -150,7 +152,7 @@
             this.activeTodosButton.BackColor = System.Drawing.Color.Transparent;
             this.activeTodosButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.activeTodosButton.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.activeTodosButton.Location = new System.Drawing.Point(0, 168);
+            this.activeTodosButton.Location = new System.Drawing.Point(-3, 233);
             this.activeTodosButton.Name = "activeTodosButton";
             this.activeTodosButton.Size = new System.Drawing.Size(167, 51);
             this.activeTodosButton.TabIndex = 5;
@@ -350,6 +352,19 @@
             this.columnHeader4.Text = "Todo Status";
             this.columnHeader4.Width = 120;
             // 
+            // allTodosButton
+            // 
+            this.allTodosButton.BackColor = System.Drawing.Color.Transparent;
+            this.allTodosButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.allTodosButton.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.allTodosButton.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.allTodosButton.Location = new System.Drawing.Point(0, 185);
+            this.allTodosButton.Name = "allTodosButton";
+            this.allTodosButton.Size = new System.Drawing.Size(167, 51);
+            this.allTodosButton.TabIndex = 7;
+            this.allTodosButton.Text = "ALL";
+            this.allTodosButton.UseVisualStyleBackColor = false;
+            // 
             // ToDoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -416,5 +431,6 @@
         private System.Windows.Forms.ListView listViewAll;
         internal System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.ColumnHeader columnHeader4;
+        private System.Windows.Forms.Button allTodosButton;
     }
 }
