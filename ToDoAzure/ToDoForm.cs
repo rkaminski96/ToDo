@@ -21,7 +21,6 @@ namespace ToDoAzure
             InitializeComponent();
         }
 
-
         private string checkToDoStatus(Todo todo)
         {
             var toDoStatus = "";
@@ -39,6 +38,14 @@ namespace ToDoAzure
             return result;
         }
 
+        private void addItemsToListView(ListView listView, Todo todo)
+        { 
+            ListViewItem item = new ListViewItem(todo.Title);
+            var toDoStatus = checkToDoStatus(todo);
+            item.SubItems.Add(toDoStatus);
+            listView.Items.Add(item);
+        }
+
         private void closeButton_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -50,14 +57,24 @@ namespace ToDoAzure
             var result = await speechService.RecognizeSpeechAsync();
             result = trimResult(result);
 
-            var todo = new Todo(result);
-            todos.Add(todo);
+            var newTodo = todos.FirstOrDefault(s => s.Title == result);
+            if (newTodo == null)
+            {
+                var todo = new Todo(result);
+                todos.Add(todo);
 
-            ListViewItem item = new ListViewItem(todo.Title);
+                ListViewItem item = new ListViewItem(todo.Title);
 
-            var toDoStatus = checkToDoStatus(todo);
-            item.SubItems.Add(toDoStatus);
-            listViewAll.Items.Add(item);
+                var toDoStatus = checkToDoStatus(todo);
+                item.SubItems.Add(toDoStatus);
+                listViewAll.Items.Add(item);
+
+                updateListViewActive();
+                updateListViewAll();
+                updateListViewCompleted();
+            }
+            else
+                MessageBox.Show("Todo with this title already exists");
         }
 
         private async void markAsDoneButton_Click(object sender, EventArgs e)
@@ -68,12 +85,13 @@ namespace ToDoAzure
 
             var completedTodo = todos.FirstOrDefault(s => s.Title == result);
             if (completedTodo == null)
-            {
-                MessageBox.Show("Todo with this name doesn't exist");
-            }
+                MessageBox.Show("Todo with this title does not exist");
             else
             {
                 completedTodo.Completed = true;
+                updateListViewActive();
+                updateListViewAll();
+                updateListViewCompleted();
             }
         }
 
@@ -83,15 +101,23 @@ namespace ToDoAzure
 
             foreach (var todo in todos)
             {
-                ListViewItem item = new ListViewItem(todo.Title);
-                var toDoStatus = checkToDoStatus(todo);
-                item.SubItems.Add(toDoStatus);
-                listViewAll.Items.Add(item);
+                addItemsToListView(listViewAll, todo);
             }
 
             listViewAll.BringToFront();
             toDoStatusLabel.Text = "Todo App | All";
         }
+
+        private void updateListViewAll()
+        {
+            listViewAll.Items.Clear();
+
+            foreach (var todo in todos)
+            {
+                addItemsToListView(listViewAll, todo);
+            }
+        }
+
 
         private void activeTodosButton_Click(object sender, EventArgs e)
         {
@@ -99,15 +125,28 @@ namespace ToDoAzure
 
             foreach (var todo in todos)
             {
-                ListViewItem item = new ListViewItem(todo.Title);
-                var toDoStatus = checkToDoStatus(todo);
-                item.SubItems.Add(toDoStatus);
-                listViewActive.Items.Add(item);
+                if (!todo.Completed)
+                {
+                    addItemsToListView(listViewActive, todo);
+                }
             }
 
             listViewActive.BringToFront();
             toDoStatusLabel.Text = "Todo App | Active";
             
+        }
+
+        private void updateListViewActive()
+        {
+            listViewActive.Items.Clear();
+
+            foreach (var todo in todos)
+            {
+                if (!todo.Completed)
+                {
+                    addItemsToListView(listViewActive, todo);
+                }
+            }
         }
 
         private void completedTodosButton_Click(object sender, EventArgs e)
@@ -116,14 +155,28 @@ namespace ToDoAzure
 
             foreach (var todo in todos)
             {
-                ListViewItem item = new ListViewItem(todo.Title);
-                var toDoStatus = checkToDoStatus(todo);
-                item.SubItems.Add(toDoStatus);
-                listViewCompleted.Items.Add(item);
+                if (todo.Completed)
+                {
+                    addItemsToListView(listViewCompleted, todo);
+                }
             }
 
             listViewCompleted.BringToFront();
             toDoStatusLabel.Text = "Todo App | Completed";
         }
+
+        private void updateListViewCompleted()
+        {
+            listViewCompleted.Items.Clear();
+
+            foreach (var todo in todos)
+            {
+                if (todo.Completed)
+                {
+                    addItemsToListView(listViewCompleted, todo);
+                }
+            }
+        }
+
     }
 }
