@@ -82,7 +82,7 @@ namespace ToDoAzure
                 updateListViewCompleted();
             }
             else
-                MessageBox.Show("Todo with this title already exists");
+                MessageBox.Show($"Todo { result } already exists");
         }
 
         private async void markAsDoneButton_Click(object sender, EventArgs e)
